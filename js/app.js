@@ -26,13 +26,13 @@ if (answer === 'yes' || answer === 'y')
     console.log('user got question ' + qnum + '1 wrong.  Guessed ' + answer);
     }
     else 
-    {alert('It was a freaking yes or no question.  Means your answer should be YES OR NO');
+    {alert('It was a freaking yes or no question.  Means your answer should be either YES OR NO');
     console.log('user got question ' + qnum + '1 wrong.  Guessed ' + answer);}
 
 // question 2
 qnum ++;
 
-answer = prompt('True/False:  there isn\'t be a single question about me in this "about me".').toLowerCase();
+answer = prompt('True/False:  there isn\'t a single question about me in this "about me".').toLowerCase();
 
 // Get it right?
 if (answer === 'false' || answer === 'f')
@@ -43,7 +43,7 @@ if (answer === 'false' || answer === 'f')
     }  
     else if (answer === 'true' || answer === "t")
     {
-    alert('like I could go that long without talking about myself');
+    alert('I like that you think I can go that long without talking about myself');
     console.log('user got question ' + qnum + ' wrong.  Guessed ' + answer);
     }
     else
@@ -97,7 +97,7 @@ answer = prompt('Yes/No:  Kim is my favorite Kardashian').toLowerCase();
 
 if (answer === 'no' || answer === 'n')
     {
-    alert('Correct.  She\'s the only one whose name I know, and therefore my least favorite.');
+    alert('Correct.  She\'s the only one whose name I know, and therefore my least favorite Kardashian.');
     console.log('Let\'s pretend ' +qnum+ ' doesn\'t exist.  Nailed it, but I\'m embarassed that I asked.');
     correctAnswers++;}
 else
@@ -106,7 +106,7 @@ else
     console.log(qnum+' is wrong.  Didn\'t one of them boink Lamar Odom?  I\'ll say its that one.');
 }
 
-//  Grade it.
+//  Grade it. 
 var theScore = correctAnswers/qnum
 if (theScore >= 0.9 ){
     alert('you got '+ correctAnswers + ' out of '+qnum+ 'a passing score.  Of course, that\'s easy to do on your second time through.')
