@@ -19,27 +19,36 @@ if (answer === 'yes' || answer === 'y')
     {
     alert('Hey, you\'re smarter than I thought');
     console.log('user got question ' + qnum + ' right.  Guessed ' + answer);
-    correctAnswers++}  else
+    correctAnswers++}  
+    else if (answer === 'no' || answer === 'n')
     {
     alert('I had low expectations.  You\'re meeting them');
     console.log('user got question ' + qnum + '1 wrong.  Guessed ' + answer);
     }
+    else 
+    {alert('It was a freaking yes or no question.  Means your answer should be YES OR NO');
+    console.log('user got question ' + qnum + '1 wrong.  Guessed ' + answer);}
 
 // question 2
 qnum ++;
 
-answer = prompt('Yes/No:  there isn\'t be a single question about me in this "about me".').toLowerCase();
+answer = prompt('True/False:  there isn\'t be a single question about me in this "about me".').toLowerCase();
 
 // Get it right?
-if (answer === 'no' || answer === 'n')
+if (answer === 'false' || answer === 'f')
     {
     alert('It\'s like you\'ve got ESPN or something');
     console.log('user got question ' + qnum + ' right.  Guessed ' + answer);
     correctAnswers++;
-    }  else
+    }  
+    else if (answer === 'true' || answer === "t")
     {
     alert('like I could go that long without talking about myself');
     console.log('user got question ' + qnum + ' wrong.  Guessed ' + answer);
+    }
+    else
+    {alert('I didn\'t think switching to a "True/False" format made this a trick question.  Perhaps I overestimated you.')
+    console.log('Might wanna take the computer away from this one.  Answered a true false question with "' +answer+'."');
     }
 
 // Question 3
@@ -51,9 +60,15 @@ if (answer === 'no'  || answer === 'n'){
         alert('Of course, if I could AFFORD a therapist, that probably is what he\'d say');
         console.log('not sure how, but he got ' + qnum + ' right.');
         correctAnswers++;
-    } else{
-        alert('Nope.  He mostly just says I\'m the reason he drinks');
+    } 
+    else if (answer === 'yes' || answer === 'y')
+    {
+        alert('Nope.  But if I HAD one, that\'s probably what he\'d say');
         console.log('got question ' + qnum + 'wrong.  Typical');
+    }
+    else 
+    {alert(answer + ".  Really?  "+userName+" perhaps I can make an appointment for you?")
+    console.log(qnum+' is wrong.  The answer isn\'t '+answer);
     }
     
 //Question 4
@@ -65,26 +80,38 @@ if (answer === 'no' || answer === 'n'){
     alert('It wasn\'t for lack of trying.  Like the Titanic, they\'re unsinkable');
     console.log('question ' +qnum+ ' was too easy.');
     correctAnswers++;
-}else{
+}
+else if (answer === 'yes' === answer === 'y')
+{
     alert('How is that even possible?  They float when upside down and full of water!');
     console.log('He even missed the freebie.  Got '+qnum+' wrong.');
 }
-
+else{
+    alert('Truely you are the master of the non-sequitor');
+    console.log(qnum+" "+ answer); 
+    // honestly I'm bored with thinking up amusing console log replies for people who can't work out how yes/no works.
+}
 // Question 5
 qnum++
 answer = prompt('Yes/No:  Kim is my favorite Kardashian').toLowerCase();
 
-if (answer === 'no' || answer === 'n'){
-    alert('She\'s the only one whose name I know, and therefore my least favorite.');
+if (answer === 'no' || answer === 'n')
+    {
+    alert('Correct.  She\'s the only one whose name I know, and therefore my least favorite.');
     console.log('Let\'s pretend ' +qnum+ ' doesn\'t exist.  Nailed it, but I\'m embarassed that I asked.');
-    correctAnswers++;
-}else{
+    correctAnswers++;}
+else
+{
     alert('Gross.');
     console.log(qnum+' is wrong.  Didn\'t one of them boink Lamar Odom?  I\'ll say its that one.');
 }
 
-if (correctAnswers === 5){
-    alert('you got a perfect score.  Of course, that\'s easy to do on your second time through.')
-}else{
-    alert('you got ' + correctAnswers + ' out of '+qnum+' correct.  That\'s ' + correctAnswers*20+ '%, a failing grade here at codefellows!')
+//  Grade it.
+var theScore = correctAnswers/qnum
+if (theScore >= 0.9 ){
+    alert('you got '+ correctAnswers + ' out of '+qnum+ 'a passing score.  Of course, that\'s easy to do on your second time through.')
+}
+else
+{
+    alert('you got ' + correctAnswers + ' out of '+qnum+' correct.  That\'s ' + 100*theScore + '%, a failing grade here at codefellows!')
 }
