@@ -1,30 +1,21 @@
 h1 {text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 60px;
-    color: rebeccapurple;
-    font-weight: bold;
-    text-shadow: -4px 4px 2px #000000}
-
-body {
-    background-image: url("https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/156222_10151197604542634_573366667_n.jpg?_nc_cat=0&oh=1b89de046e771c0cc1869ed842641e9e&oe=5B99F424");
-    background-repeat: no-repeat;
-    background-size: 100%;}
-#DYK {
-    position: relative;
-    top: 70px;
-    size: 400%;
-}
-
-h1+p {
-    text-align: center;
-    font-size: 200%;
-    position: relative;
-    top: 100px;
-    color: rgb(219, 24, 24);
+    
+    background: linear-gradient(90deg, rgb(178,231,233) 33%, rgb(154, 255, 39) 66%, rgb(183, 178, 253));
+    color:transparent;
+    -webkit-background-clip: text;
+    font-size: 2.5em;
     font-family: 'Monotype Corsiva', cursive;
     font-weight: 900;
-    text-shadow: 0px 1px, 1px 0px, 1px 1px;
-    font-style: oblique;
+    font-style: oblique;}
+
+body {
+    background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2015/04/night-sky-stars-milky-way-photography-43__880.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;}
+#trivia {
+
+    position: relative;
+    top: 70px;
     animation-name: textslidesin;
     animation-duration: 5s;
   }
@@ -41,7 +32,52 @@ h1+p {
         }
     }   
 
-    p.annoying{
+ol
+{
+    list-style-type: decimal;
+    padding-top: 9%;
+    padding-left: 20%;
+    padding-right:  20%;
+    font-size: 1.5em;
+    font-weight: 600;
+    color:  rgb(6, 230, 230);
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(137, 19, 184), 0 0 5px rgb(170, 170, 233);
+    
+   
+   
+}
+
+li
+{
+    margin: 0.25em;
+
+}
+
+#bio
+{
+    animation-name: fadeIn;
+    animation-duration: 10s;
+    padding-top:  5%;
+
+} 
+
+     @keyframes fadeIn {
+        from{opacity: 0;}
+        to {opacity: 1;}
+     }
+
+ul
+{
+    padding-left: 20%;
+    list-style-type: square;
+    color: rgb(46, 0, 73);
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
+   
+    
+}
+
+
+    /* p.annoying{
         position: relative;
         top: 180px;
         font-size: 40pt;
@@ -49,18 +85,9 @@ h1+p {
         text-align: center;
         animation-name: theAnnoyingAnimation;
         animation-duration: 0.4s;
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite; */
 
-        /* Gradient text code copy-pasta'd then (slightly) edited from
-        
-        https://stackoverflow.com/questions/37831837/gradient-text-color
-        
-        The 2nd reply was an incredibly helpful explanation of how everything works.
-        */
-        
-        background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.29, #22f), color-stop(0.43, #2ff), color-stop(0.57, #2f2),color-stop(0.71, #2f2), color-stop(0.85, #ff2), color-stop(1, #f22) );
-        color:transparent;
-        -webkit-background-clip: text;
+       /*
         }
 
         @keyframes theAnnoyingAnimation{
@@ -77,7 +104,7 @@ h1+p {
                 transform: scale3d(0.3, 0.3, 1);
             }
             
-        }
+        } */
         
 /* For the record, since you mentioned wanting to get a feel for our
 pre-existing knowledge... Prior to doing this the sum total of my

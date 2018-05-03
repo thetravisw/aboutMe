@@ -1,117 +1,148 @@
 'use strict';
 
-//ask for userName
+//Greet User
 var userName = prompt('what do I call you');
+alert("Hey.  You're my 3rd favorite " + userName + " today!");
+console.log("the user's name is " + userName);
 
-//Greet user by name
-alert('Hey.  You\'re my 3rd favorite ' + userName + " today!");
+//Create Arrray of Questions and Answers
+//Format is [Question, Correct Answer, Shorthand Correct answer, Right Reply Response, Wrong Reply Response]
 
-//console.log
-console.log('the user\'s name is ' + userName);
+var gameArray = [
+    ["Yes/No:  Jakarta is the 4th most populus city in the world", "yes","y","Nailed it","I had low standards.  You're meeting them."],
+    ["True/False:  I didn't put a single question about me in this \"about me\"", "false","f", "It's like you have ESPN or something","I like to talk about myself too much for that!"],
+    ["Yes/No:  Once upon a time, I accidentally sunk a kayak","No",'n',"It wasn't for lack of trying.  Those things are like the Titanic.  Unsinkable","How is that even possible?  They float when upside-down and full of water!"],
+    ["Yes/No:  Kim is my favorite Kardashian", "No",'n', "She's the only one I can name.  Therefore she is my LEAST favorite Kardashian", "Gross."],
+    ["Yes/No:  I am an avid skiier",'Yes','y','Every weekend, all winter long',"I can see why you'd be confused.  It's the only cool thing about me"]];
+var answer = "text";
+var i = 0;
+var acceptable = false;
+var correctAnswers = 0;
 
-var qnum = 1
-var correctAnswers = 0
-//Ask Q1
-var answer = prompt('Yes/No:  Jakarta is the 4rd most populus city in the world').toLowerCase();
-
-// Get it right?
-if (answer === 'yes' || answer === 'y')
+//Iterate through the guessing game part of the array using a for loop
+for(i =0; i< gameArray.length; i++)
+{
+    //A do/while loop that can only be escaped acceptable is true.
+    //if then statements inside the loop evaluate the user's answer to determine if it's a valid response to the question
+    //if it is, acceptable is set to true.  Otherwise, it's false and loops back to the prompt.
+    do 
     {
-    alert('Hey, you\'re smarter than I thought');
-    console.log('user got question ' + qnum + ' right.  Guessed ' + answer);
-    correctAnswers++}  
-    else if (answer === 'no' || answer === 'n')
-    {
-    alert('I had low expectations.  You\'re meeting them');
-    console.log('user got question ' + qnum + '1 wrong.  Guessed ' + answer);
+    answer=prompt(gameArray[i][0]).toLowerCase();
+    var j=i+1;
+    //  For some reason putting i+1 in the console log below caused problems.  This works fine though.  No idea why.
+    console.log("Question "+ j +" was answered '" + answer + "'");
+    
+        if ((answer === "yes" || answer === "y" || answer === "no"  || answer === "n") && i!==1)
+        {
+            acceptable=true;
+            console.log("Acceptable answer for question "+j);
+        }
+       else if (i === 1 && ( answer === "true"  || answer === 'false' || answer === 't' || answer === 'f'))
+       {
+           acceptable=true;
+           console.log("Acceptable answer for question 2");
+       }
+       else
+       {
+           alert("I will MAKE you take this goofy little game seriously.  Try entering a valid answer this time.");
+       }
     }
-    else 
-    {alert('It was a freaking yes or no question.  Means your answer should be either YES OR NO');
-    console.log('user got question ' + qnum + '1 wrong.  Guessed ' + answer);}
-
-// question 2
-qnum ++;
-
-answer = prompt('True/False:  there isn\'t a single question about me in this "about me".').toLowerCase();
-
-// Get it right?
-if (answer === 'false' || answer === 'f')
+    while (acceptable === false);
+    
+    //check to see if the answer was correct
+    if (answer === gameArray[i][1] || answer === gameArray[i][2])
     {
-    alert('It\'s like you\'ve got ESPN or something');
-    console.log('user got question ' + qnum + ' right.  Guessed ' + answer);
-    correctAnswers++;
-    }  
-    else if (answer === 'true' || answer === "t")
-    {
-    alert('I like that you think I can go that long without talking about myself');
-    console.log('user got question ' + qnum + ' wrong.  Guessed ' + answer);
+        correctAnswers++;
+        alert(gameArray[i][3]);
+        console.log('Question '+ j + " correct.  Answered " + answer);
     }
     else
-    {alert('I didn\'t think switching to a "True/False" format made this a trick question.  Perhaps I overestimated you.')
-    console.log('Might wanna take the computer away from this one.  Answered a true false question with "' +answer+'."');
-    }
-
-// Question 3
-qnum ++;
-
-answer = prompt('Yes/No:  My therapist says I always make jokes beacase I have a pathological need for external validation').toLowerCase();
-
-if (answer === 'no'  || answer === 'n'){
-        alert('Of course, if I could AFFORD a therapist, that probably is what he\'d say');
-        console.log('not sure how, but he got ' + qnum + ' right.');
-        correctAnswers++;
-    } 
-    else if (answer === 'yes' || answer === 'y')
     {
-        alert('Nope.  But if I HAD one, that\'s probably what he\'d say');
-        console.log('got question ' + qnum + 'wrong.  Typical');
-    }
-    else 
-    {alert(answer + ".  Really?  "+userName+" perhaps I can make an appointment for you?")
-    console.log(qnum+' is wrong.  The answer isn\'t '+answer);
+        alert(gameArray[i][4]);
+        console.log('Question '+ j + " incorrect.  Answered " + answer);
     }
     
-//Question 4
-qnum ++
-
-answer = prompt('Yes/No:  Once upon a time, I sunk a kayak').toLowerCase();
-
-if (answer === 'no' || answer === 'n'){
-    alert('It wasn\'t for lack of trying.  Like the Titanic, they\'re unsinkable');
-    console.log('question ' +qnum+ ' was too easy.');
-    correctAnswers++;
+    //set acceptable to false so that the next time through the do loop it will begin with the correct value
+    acceptable=false;
 }
-else if (answer === 'yes' === answer === 'y')
-{
-    alert('How is that even possible?  They float when upside down and full of water!');
-    console.log('He even missed the freebie.  Got '+qnum+' wrong.');
-}
-else{
-    alert('Truely you are the master of the non-sequitor');
-    console.log(qnum+" "+ answer); 
-    // honestly I'm bored with thinking up amusing console log replies for people who can't work out how yes/no works.
-}
-// Question 5
-qnum++
-answer = prompt('Yes/No:  Kim is my favorite Kardashian').toLowerCase();
 
-if (answer === 'no' || answer === 'n')
+var bonChance = Math.floor(Math.random() * 100 + 1 );
+console.log("Random Number = " + bonChance);
+
+var guessNum = 2;
+for(i = 4; i> 0; i--)
     {
-    alert('Correct.  She\'s the only one whose name I know, and therefore my least favorite Kardashian.');
-    console.log('Let\'s pretend ' +qnum+ ' doesn\'t exist.  Nailed it, but I\'m embarassed that I asked.');
-    correctAnswers++;}
-else
+        answer = prompt("You have " + i + " guesses to psychically pick the magic number.  (Hint, it's an integer between 1 and 100)  (Second hint:  Use the Force)")
+        guessNum = 5-i;
+        console.log("guess " + guessNum + "was " + answer +'.');
+        if (parseInt(answer) === bonChance)
+            {
+                correctAnswers++;
+                i=-5;
+                alert("The Force is strong with this one.");
+                console.log("^^^ evaluated false");   
+            }
+        else
+        {
+            console.log('^^^ evauated true');
+            if(parseInt(answer) > bonChance)
+            {
+                alert('I pity the fool who guesses too high');
+            }
+            else
+            {
+                alert("You ain't Harrison Ford!  Why you going so-low");
+            }
+        }
+    }
+if (i !== -5)
 {
-    alert('Gross.');
-    console.log(qnum+' is wrong.  Didn\'t one of them boink Lamar Odom?  I\'ll say its that one.');
+    alert('the correct answer was '+bonChance);
 }
 
-//  Grade it. 
-var theScore = correctAnswers/qnum
-if (theScore >= 0.9 ){
-    alert('you got '+ correctAnswers + ' out of '+qnum+ 'a passing score.  Of course, that\'s easy to do on your second time through.')
+var possibilities = ['new york','hong kong','antwerp','ellensburg'];
+var gotOne = false;
+
+//two for loops,  The outer to track guess numbers.  The inner to compare inputs against the possibilities array.
+
+
+for (i=6; i >0; i--)
+    {
+        
+        answer = prompt ("Other than Seattle, guess a city where I've lived for 3 or more years.  You have "+i+' guesses left').toLowerCase();
+
+        for (j=0; j < 4; j++)
+        {
+            if (possibilities[j] === answer)
+            {
+                j = 752;
+                i = -211;
+
+                //the above escapes both loops
+
+                gotOne = true;
+
+            }  
+        }
+}
+
+if (gotOne===true)
+    {
+        correctAnswers++;
+        alert("Kudos!  I have indeed lived in " + answer + " for at least 3 years.");
+    }
+    else
+    {
+        alert("It must suck to be this bad at guessing games!");
+    }
+
+
+ //Grade it. 
+var theScore = Math.floor(correctAnswers*100/7);
+if (theScore >= 90 ){
+    alert('you got '+ correctAnswers + ' out of 7.  ' + theScore + '%.  A passing score.  Of course, that\'s easier to do on your second time through.');
 }
 else
 {
-    alert('you got ' + correctAnswers + ' out of '+qnum+' correct.  That\'s ' + 100*theScore + '%, a failing grade here at codefellows!')
+    alert('you got ' + correctAnswers + ' out of 7 correct.  That\'s ' + theScore + '%; which is a failing grade here at Codefellows!');
 }
