@@ -69,7 +69,8 @@ var bonChance = Math.floor(Math.random() * 100 + 1);
 console.log("Random Number = " + bonChance);
 
 var guessNum = 2;
-for (i = 4; i > 0; i--) {
+function question6 ()
+{
     answer = prompt("You have " + i + " guesses to psychically pick the magic number.  (Hint, it's an integer between 1 and 100)  (Second hint:  Use the Force)")
     guessNum = 5 - i;
     console.log("guess " + guessNum + "was " + answer + '.');
@@ -89,42 +90,35 @@ for (i = 4; i > 0; i--) {
         }
     }
 }
+for (i = 4; i > 0; i--) {
+ question6()   
+}
 if (i !== -5) {
     alert('the correct answer was ' + bonChance);
 }
 
 var possibilities = ['new york', 'hong kong', 'antwerp', 'ellensburg'];
-var gotOne = false;
+var gotOne = 0;
 
 //two for loops,  The outer to track guess numbers.  The inner to compare inputs against the possibilities array.
 
-
-for (i = 6; i > 0; i--) {
+function question7() {
 
     answer = prompt("Other than Seattle, guess a city where I've lived for 3 or more years.  You have " + i + ' guesses left').toLowerCase();
 
-    for (j = 0; j < 4; j++) {
-        if (possibilities[j] === answer) {
-            j = 752;
-            i = -211;
-
-            //the above escapes both loops
-
-            gotOne = true;
-
-        }
-    }
+    if (possibilities.includes(answer)===true) {
+        correctAnswers++;
+        alert("Kudos!  I have indeed lived in " + answer + " for at least 3 years.");
+        gotOne = 1;
+        return 
+    }  
 }
-
-if (gotOne === true) {
-    correctAnswers++;
-    alert("Kudos!  I have indeed lived in " + answer + " for at least 3 years.");
+for (i = 6; i > 0; i--) {
+question7()
 }
-else {
+if (gotOne === 0) {
     alert("It must suck to be this bad at guessing games!");
-}
-
-
+} 
 //Grade it. 
 var theScore = Math.floor(correctAnswers * 100 / 7);
 if (theScore >= 90) {
@@ -133,3 +127,4 @@ if (theScore >= 90) {
 else {
     alert('you got ' + correctAnswers + ' out of 7 correct.  That\'s ' + theScore + '%; which is a failing grade here at Codefellows!');
 }
+
