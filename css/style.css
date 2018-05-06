@@ -1,17 +1,48 @@
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to {opacity: 1;}
+ }
+
 h1 {text-align: center;
-    
-    background: linear-gradient(90deg, rgb(178,231,233) 33%, rgb(154, 255, 39) 66%, rgb(183, 178, 253));
+    background: linear-gradient(90deg, red 10%, orange 29%, yellow 43%, green 57%, blue 61%, purple 75%, red);
     color:transparent;
     -webkit-background-clip: text;
-    font-size: 2.5em;
-    font-family: 'Monotype Corsiva', cursive;
+    font-size: 3em;
+    font-family: 'Lucida Console', monospace;
     font-weight: 900;
-    font-style: oblique;}
+    margin: 0 auto;
+    width: 10em;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+}
+
+h3 {color: white;
+    font-style: italic;
+    font-family: 'Monotype Corsiva', cursive;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.5em;
+    animation-name: fadeIn;
+    text-shadow: 2px color rgb(6, 230, 230);
+    animation-name: fadeIn;
+    animation-duration: 7s;
+    text-shadow: rgb(219, 113, 43) 8px 0 10px;
+}
+
+h2 {color: white;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.5em
+}
 
 body {
     background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2015/04/night-sky-stars-milky-way-photography-43__880.jpg");
     background-repeat: no-repeat;
     background-size: 100%;}
+
+
 #trivia {
 
     position: relative;
@@ -31,6 +62,8 @@ body {
       width: 100%;
         }
     }   
+
+
 
 ol
 {
@@ -55,58 +88,24 @@ li
 
 #bio
 {
-    animation-name: fadeIn;
+    max-width: 50%;
+    background-color: beige;
     animation-duration: 10s;
     padding-top:  5%;
-
+    display: inline;
 } 
 
-     @keyframes fadeIn {
-        from{opacity: 0;}
-        to {opacity: 1;}
-     }
+#quotes
+{
+    max-width: 50%;
+    display: inline;
+
+}
 
 ul
 {
     padding-left: 20%;
     list-style-type: square;
     color: rgb(46, 0, 73);
-    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
-   
-    
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;   
 }
-
-
-    /* p.annoying{
-        position: relative;
-        top: 180px;
-        font-size: 40pt;
-        text-shadow: 0px 1px, 1px 0px, 1px 1px;
-        text-align: center;
-        animation-name: theAnnoyingAnimation;
-        animation-duration: 0.4s;
-        animation-iteration-count: infinite; */
-
-       /*
-        }
-
-        @keyframes theAnnoyingAnimation{
-            0%{
-                opacity: 0;
-                transform: scale3d(0.3, 0.3, 1);
-            }
-            50%{
-                opacity: 1;
-                transform: scale3d(1, 1, 1);
-            }
-            100%{
-                opacity: 0;
-                transform: scale3d(0.3, 0.3, 1);
-            }
-            
-        } */
-        
-/* For the record, since you mentioned wanting to get a feel for our
-pre-existing knowledge... Prior to doing this the sum total of my
-CSS knowledge was last-night's reading homework and the Khan Academy
-tutorial.  All the rest of this comes from shit I googled today.*/
