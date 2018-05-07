@@ -94,7 +94,7 @@ backgroundbioquotes
 {    background-image: url (https://picturefordesktop.com/wp-content/uploads/2017/03/Campfire-images-desktop-wallpaper-800x600.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
-
+    overflow: auto;
     border: 2px solid brown;   
 }
 
