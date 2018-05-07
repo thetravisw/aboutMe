@@ -90,27 +90,22 @@ li
 
 }
 
-backgroundbioquotes
-{    background-image: url (https://picturefordesktop.com/wp-content/uploads/2017/03/Campfire-images-desktop-wallpaper-800x600.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    overflow: auto;
-    border: 2px solid brown;   
-}
 
 biobox
 {
-    float: left;
     width: 48%;   
-    background: transparent;
     border: 2px solid blue;
 } 
 
 quotesbox
 {   display: inline-block;
     width: 48%;
-    background: transparent;
     border: 2px solid green;
+    float: right;
+    background-image: url (https://picturefordesktop.com/wp-content/uploads/2017/03/Campfire-images-desktop-wallpaper-800x600.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
 }
 
 ul
