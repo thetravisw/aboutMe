@@ -25,12 +25,15 @@ h1 {text-align: center;
     font-weight: 900;
     margin: 0 auto;
     width: 10em;
-    animation-name: fadeIn;
+    animation-name: textslidesin;
     animation-duration: 3s;}
 
 img {
     float: right;
-    margin: 2.0em
+    margin: 2.0em;
+    border-radius: 8%;
+    max-width: 100%;
+    height: auto;
 }
 
 h3 {color: white;
@@ -51,21 +54,24 @@ h2 {color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     text-align: center;
-    font-size: 1.5em
+    font-size: 1.5em;
+    animation-name: fadeIn;
+    animation-duration: 12s;
+    text-shadow: 1px 1px yellow;
+
+
 }
 
 #starryBackground {
     background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2015/04/night-sky-stars-milky-way-photography-43__880.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;}
+    background-size: cover;}
 
 
 #trivia {
 
     position: relative;
     top: 70px;
-    animation-name: textslidesin;
-    animation-duration: 5s;
   }
 
 
@@ -90,22 +96,29 @@ li
 
 }
 
+backgroundbioquotes{
+
+    /* border: 3px solid orange;
+    overflow: auto;
+    background-image: url("https://picturefordesktop.com/wp-content/uploads/2017/03/Campfire-images-desktop-wallpaper-800x600.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    clear: both;
+    padding: 200px 200px 400px 400px; */
+
+}
 
 biobox
-{
-    width: 48%;   
-    border: 2px solid blue;
+{   float: left;
+    width: 50%;
+    background-color: darkgreen;
 } 
 
 quotesbox
 {   display: inline-block;
-    width: 48%;
-    border: 2px solid green;
+    width: 50%;
     float: right;
-    background-image: url (https://picturefordesktop.com/wp-content/uploads/2017/03/Campfire-images-desktop-wallpaper-800x600.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
+    background-color:  thistle;
 }
 
 ul
